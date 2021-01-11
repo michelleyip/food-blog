@@ -8,7 +8,7 @@ import Footer from './parts/Footer.js';
 
 
 
-class Home extends Component {
+class About extends Component {
     // constructor(props) {
     //   super(props);
     //   this.state = {
@@ -25,7 +25,8 @@ class Home extends Component {
     return (
          <div className="site">
          <Navigation/>
-        <Footer/>
+         <Footer/>
+
         </div>
     );
 
@@ -36,4 +37,4 @@ class Home extends Component {
 
 
 
-export default Home;
+export default About;

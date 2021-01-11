@@ -73,4 +73,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 ### Pre-requisites
+If cloned:
+
+npm install -g update-node 
+npm update npm -g  
+
 npm install --save react-router-dom
+
+
+npm install react-bootstrap bootstrap
+npm install --save font-awesome

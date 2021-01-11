@@ -5,8 +5,8 @@ import './components/assets/css/App.css';
 
 
 import Home from './components/Home.js';
-// import About from './components/About.js';
-// import Fashion from './components/Fashion.js';
+import About from './components/About.js';
+import Recipes from './components/Recipes.js';
 // import Beauty from './components/Beauty.js';
 // import Food from './components/Food.js';
 // import Lifestyle from './components/Lifestyle.js';
@@ -23,9 +23,9 @@ class App extends Component{
       {/* <Navigation> */}
         <Switch>
           <Route path="/" component={Home} exact/>
-          {/* <Route path="/about" component={About}/>
-          <Route path="/fashion" component={Fashion}/>
-          <Route path="/beauty" component={Beauty}/>
+          <Route path="/about" component={About}/>
+          <Route path="/recipes" component={Recipes}/>
+          {/* <Route path="/beauty" component={Beauty}/>
           <Route path="/food" component={Food}/>
           <Route path="/lifestyle" component={Lifestyle}/>
           <Route path="/newpost" component={Newpost}/>
