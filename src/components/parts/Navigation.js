@@ -14,9 +14,12 @@ class Navigation extends Component {
 
     render() {
 
-    }
-    return ();
+    
+    return (
+      <div>Test </div>
+    );
 
+}
 }
 
 
