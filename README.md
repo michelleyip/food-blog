@@ -83,3 +83,8 @@ npm install --save react-router-dom
 
 npm install react-bootstrap bootstrap
 npm install --save font-awesome
+npm install mysql
+
+npm install express --save
+
+npm install --save moment

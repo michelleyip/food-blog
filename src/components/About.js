@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import './assets/css/components.css';
 
-
-
 import Navigation from './parts/Navigation.js';
 import Footer from './parts/Footer.js';
-
-
 
 class About extends Component {
     // constructor(props) {
@@ -15,16 +11,12 @@ class About extends Component {
     //   };
     // }
 
-
-
-
-
     render() {
-
-    
     return (
          <div className="site">
          <Navigation/>
+         <h1 className="page-title">About</h1>
+
          <Footer/>
 
         </div>
@@ -32,9 +24,4 @@ class About extends Component {
 
 }
 }
-
-
-
-
-
 export default About;
