@@ -41,7 +41,27 @@ app.get('/latestrecipes',function(req,res){
 
 app.get('/allrecipes',function(req,res){
     connection.connect(function(error){
-        const query = connection.query('SELECT * FROM recipe_post', function (err, result, fields) {
+        const query = connection.query('SELECT * FROM recipe_post ORDER BY recipe_id DESC', function (err, result, fields) {
+            if (err) throw err;
+            res.send(result);
+        });
+        console.log(query.sql);
+    });
+});
+
+app.get('/searchby/:search/:option',function(req,res){
+    let post_search  ="";
+    if (req.params.search==="Cuisine"){
+        post_search = "recipe_cuisine";
+    }
+    else if (req.params.search==="Category"){
+        post_search = "recipe_category";
+    }
+    else{}
+    let post_option = req.params.option;
+
+    connection.connect(function(error){
+        const query = connection.query('SELECT * FROM recipe_post WHERE '+post_search+'= ?',post_option, function (err, result, fields) {
             if (err) throw err;
             res.send(result);
         });
@@ -50,7 +70,6 @@ app.get('/allrecipes',function(req,res){
 });
 
 app.get('/singlerecipe/:id',function(req,res){
-    console.log('Inside GET Method');
     let post_id  = parseInt(req.params.id);
     console.log(post_id);
 
@@ -58,6 +77,18 @@ app.get('/singlerecipe/:id',function(req,res){
         const query = connection.query('SELECT * FROM recipe_post WHERE recipe_id = ?', post_id ,function (err, result, fields) {
             if (err) throw err;
             res.send(result);
+        });
+        console.log(query.sql);
+    });
+});
+
+app.post('/addrecipe',function(req,res){
+    connection.connect(function(error){
+        // const post = JSON.stringify(req.body);
+        const post = req.body;
+        console.log("The data "+post);
+        const query = connection.query('INSERT INTO recipe_post SET ?', post ,function (err, result, fields) {
+            if (err) throw err;
         });
         console.log(query.sql);
     });

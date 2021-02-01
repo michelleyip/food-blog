@@ -8,13 +8,13 @@ import Home from './components/Home.js';
 import About from './components/About.js';
 import Recipes from './components/Recipes.js';
 import Recipe from './components/Recipepost.js';
+import Newpost from './components/Newpost.js';
 
 // import Beauty from './components/Beauty.js';
 // import Food from './components/Food.js';
 // import Lifestyle from './components/Lifestyle.js';
 // import Newpost from './components/Newpost.js';
 // import Blogpost from './components/Blogpost.js';
-
 
 class App extends Component{
 
@@ -48,6 +48,7 @@ callBackendAPI= async()=>{
           <Route path="/" component={Home} exact/>
           <Route path="/about" component={About}/>
           <Route path="/recipes" component={Recipes}/>
+          <Route path="/newpost" component={Newpost}/>
           <Route path="/recipepost/:param" component={Recipe}/>
 
           {/* <Route path="/beauty" component={Beauty}/>

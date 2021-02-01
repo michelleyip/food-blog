@@ -1,3 +1,32 @@
 .site{
     width: 100%;
 }
+
+.colour-bg{
+    background-color:#efeee5;
+}
+
+.click{
+    cursor: pointer;
+}
+
+.img-box{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.subheading{
+    font-family: "domaine", script;
+    font-style: italic;
+    padding-top: 10px;
+}
+
+Form{
+    width: 100% !important;
+}
+
+.form-group .row{
+    width: 100% !important;
+
+}

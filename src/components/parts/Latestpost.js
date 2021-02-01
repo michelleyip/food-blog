@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import '../assets/css/parts.css';
+import moment from 'moment';
+
 
 
 class Latestpost extends Component {
@@ -16,30 +18,22 @@ class Latestpost extends Component {
     }
 
     render() {
-        const img =    <img src={this.props.img} alt="main-img" className="latest-img" />
+        const img =     <img src={this.props.img} alt="main-img" className="latest-img" />
+        const text =    <Container fluid>
+                            <Row>
+                                <Col xs={5}>{this.props.cuisine} / {this.props.category}</Col>
+                                <Col xs={{ span: 5, offset: 2 }}>  {moment(this.props.date).format('MMMM, YYYY')}</Col>
+                            </Row>
+                            <Row>
+                                <Col md={{ span: 10, offset: 1 }}><h2>{this.props.recipe_title}</h2><p>{this.props.total_time} mins</p></Col>
+                            </Row>
+                            <Row>
+                                <Col md={12}>
+                                    <Button className="latest-button" variant="outline-dark" onClick={this.sendParam.bind(this)}>Read Recipe</Button>
+                                </Col>
 
-        // TO DO: unfinished
-        const text = 
-        // <Col md={6} className="latest-text">
-            <Container fluid>
-                <Row>
-                    <Col xs={5}>{this.props.cuisine} / {this.props.category}</Col>
-                    <Col xs={{ span: 5, offset: 2 }}>  {new Intl.DateTimeFormat("en-GB", {
-                                            year: "numeric",
-                                            month: "long",
-                                        }).format(Date.parse(this.props.date))}</Col>
-                </Row>
-                <Row>
-                    <Col md={{ span: 10, offset: 1 }}><h2>{this.props.recipe_title}</h2><p>{this.props.total_time}</p></Col>
-                </Row>
-                <Row>
-                    <Col md={12}>
-                        <Button className="latest-button" variant="outline-dark" onClick={this.sendParam.bind(this)}>Read Recipe</Button>
-                    </Col>
-
-                </Row>
-            </Container>
-        {/* </Col> */}
+                            </Row>
+                        </Container>
 
         if (this.props.pos) {
             return (

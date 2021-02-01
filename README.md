@@ -88,3 +88,6 @@ npm install mysql
 npm install express --save
 
 npm install --save moment
+npm install --save @tinymce/tinymce-react
+
+npm install react-html-parser
